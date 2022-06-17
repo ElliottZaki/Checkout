@@ -21,24 +21,24 @@ Our price table and offers:
     | D    | 15    |                |
     +------+-------+----------------+
 
-Notes:
+Notes:<br> 
 
-For any illegal input (non capitals) simply return -1
-In order to complete the round you need to implement the following method: checkout(String) -> Integer
+For any illegal input (non capitals) simply return -1<br> 
+In order to complete the round you need to implement the following method: checkout(String) -> Integer<br> 
 
-Where:
+Where:<br> 
 
-param[0] = e.g. 'AAB', a String containing the SKUs of all the products in the basket
-@return = e.g. 120, an Integer representing the total checkout value of the items
+param[0] = e.g. 'AAB', a String containing the SKUs of all the products in the basket<br> 
+@return = e.g. 120, an Integer representing the total checkout value of the items<br> 
 
 # Acceptance Criteria
-shop.checkout('aBc') # => -1
-shop.checkout('-B8x') # => -1
-shop.checkout(18) # => -1
-shop.checkout('AA') # => 100
-shop.checkout('ABCD') # => 115
-shop.checkout('AAA') # => 130
-shop.checkout('AAAAAA') # => 260
+shop.checkout('aBc') # => -1<br> 
+shop.checkout('-B8x') # => -1<br> 
+shop.checkout(18) # => -1<br> 
+shop.checkout('AA') # => 100<br> 
+shop.checkout('ABCD') # => 115<br> 
+shop.checkout('AAA') # => 130<br> 
+shop.checkout('AAAAAA') # => 260<br> 
 
 # Installation instructions:
 On CML type:<br> 
