@@ -4,7 +4,7 @@ describe Shop do
 
   let (:shop) { Shop.new(shop_inventory) }
   let (:shop_inventory) {{"A"=>50, "B"=>30, "C"=>20, "D"=>15}}
-  let (:basket) {[["AAB"], ["AAA"], ["ABCD"], ["AA"], ["AAAAAA"], ["AAAAAAAAA"], ["ABB"], ["BBBB"]]}
+  let (:basket) {[["AAB"], ["AAA"], ["ABCD"], ["AA"], ["AAAAAA"], ["AAAAAAAAA"], ["ABB"], ["BBBB"], ["aZB"]]}
 
   it 'Creates a new shop object with an empty total attribute' do
     expect(shop.total).to eq (0)
@@ -13,6 +13,10 @@ describe Shop do
     describe '#checkout' do
       it 'takes a string and returns an integer or total price' do
         expect(shop.checkout(basket[2])).to eq (115)
+      end
+
+      it 'returns -1 if the string does not match what is in shop_inventory' do
+        expect(shop.checkout(basket[8])).to eq (-1)
       end
     end
     

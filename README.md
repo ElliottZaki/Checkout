@@ -57,4 +57,9 @@ cd checkout <br>
 rspec<br>
 
 # Build status:
-Testing phase
+Completed - Passing tests.<br>
+Completed - Exercise.<br>
+
+# Additional Report:
+Guard clause implemented for a string that is not found on the hash table. However, error occurs if the string starts with a correct :key in the hash table. Subsequent error message follows: "nil can't be coerced into Integer".<br>
+- If additional time, to investigate further. 
