@@ -1,11 +1,10 @@
-require 'set'
-
 class Shop
 
-  attr_reader :total
+  attr_reader :total, :inventory
 
-  def initialize
+  def initialize(inventory)
     @total = 0
+    @inventory = inventory
   end
 
 inventory = Hash.new  
@@ -14,17 +13,13 @@ inventory = Hash.new
 ["C"].each {|item| inventory[item] = 20}
 ["D"].each {|item| inventory[item] = 15}
 
-# selected_items = [["AAB"], ["AAA"], ["ABCD"], ["AA"], ["AAAAAA"]]
-selected_items = ("AAB")
+selected_items = ("")
 
-
-  def checkout(selected_items, inventory)
-    basket = selected_items.split('')
+  def checkout(selected_items)
+    basket = selected_items[0].split('')
     basket.each {|item| @total += inventory[item]}
-      p @total
-      p basket
       discount_01(basket)
-      p @total
+      discount_02(basket)
       return @total
   end
 
@@ -36,53 +31,12 @@ selected_items = ("AAB")
     end
   end
 
-
-  # for every multiple of 3 apply a reduction 
-
-
-  # def subset?(basket)
-  #   p basket
-  #   basket.to_s.each == "A"
-  #   return @total - 20
-  # end
-
-  # def discount_01(basket, total)
-  #   p basket
-  #   basket.uniq.any? do |x| 
-  #     if basket.count(x) % 3 == 0 && x == "A"
-  #       @total - 20
-  #       p @total
-  #     end
-  #   end 
-  # end
-
-
-  
-  # def discount_01(basket, total)
-  #   p basket
-  #   basket.each do |item| 
-  #     if item == "A" && item % 3 == 0
-  #       @total -= 20
-  #     end
-  #   end
-  # end
-
-
-  # def checkout(selected_items, inventory)
-  #   @total = 0
-  #   basket = selected_items.split('')
-  #   p basket
-  #   basket.each {|item| total += @INVENTORY[item]}
-  #   discount_01(basket)
-  #   return total
-  # end
-
-  # def discount_01(basket)
-  #   basket.each do |item| 
-  #     if item == "A" && item % 3 == 0
-  #       @total - 20
-  #     end
-  #   end
-  # end
+  def discount_02(basket)
+    amount = basket.count("B")
+    sqrt = Math.sqrt(amount).floor
+    if amount % 2 == 0
+      @total -= ((15) * sqrt)
+    end
+  end
 
 end
